@@ -5,13 +5,40 @@
     box-sizing: border-box;
 }
 
-body {
+main {
     font-family: 'Metal Mania', cursive;
     min-height: 100vh;
     background-color: #1A1F2B;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+nav {
+    height: 4rem;
+    background-color: black;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    font-family: sans-serif;
+    ul {
+        display: flex;
+        flex-direction: row;
+        li {
+            color: white;
+            text-decoration: none;
+            list-style: none;
+            margin-right: 1rem;
+            a {
+                color: white;
+                &:hover {
+                    color: #F63F63;
+                }
+            }
+        }
+    }
 }
 
 h1,
