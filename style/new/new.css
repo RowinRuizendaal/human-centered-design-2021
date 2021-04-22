@@ -13,6 +13,7 @@ main {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    overflow: hidden;
 }
 
 .background {
@@ -135,6 +136,7 @@ footer {
     border-left: solid 4px rgb(255, 99, 71);
     border-right: solid 4px rgb(255, 99, 71);
     overflow: hidden;
+    z-index: 9;
 }
 
 footer h3 {
@@ -156,4 +158,59 @@ footer a {
     text-decoration: none;
     list-style: none;
     color: inherit;
+}
+
+.spot1 {
+    position: absolute;
+    bottom: 50px;
+    left: 0;
+    overflow: hidden;
+    -webkit-animation: move 5s infinite;
+}
+
+.spot2 {
+    position: absolute;
+    bottom: 50px;
+    right: 0;
+    overflow: hidden;
+    -webkit-animation: move2 5s infinite;
+}
+
+.spotlight {
+    position: fixed;
+    width: 0px;
+    height: 0px;
+    border-top: 500px solid rgba(255, 255, 255, 0.25);
+    border-left: 40px solid transparent;
+    border-bottom: 0px solid #575;
+    border-right: 40px solid transparent;
+    background-color: transparent;
+    -webkit-transform-origin: 50% 100% 0;
+    z-index: 0;
+    overflow: hidden;
+    transform: rotate(190deg);
+}
+
+@-webkit-keyframes move {
+    0% {
+        -webkit-transform: rotate(-30deg);
+    }
+    50% {
+        -webkit-transform: rotate(30deg);
+    }
+    100% {
+        -webkit-transform: rotate(-30deg);
+    }
+}
+
+@-webkit-keyframes move2 {
+    0% {
+        -webkit-transform: rotate(-30deg);
+    }
+    50% {
+        -webkit-transform: rotate(30deg);
+    }
+    100% {
+        -webkit-transform: rotate(-30deg);
+    }
 }
