@@ -1,0 +1,113 @@
+// URL
+const baseUrl = "https://www.ns.nl/reisplanner/#/?";
+const container = document.querySelector(".container");
+const container2 = document.querySelector(".container-2");
+const maand1 = document.querySelector(".maand-1");
+const maand2 = document.querySelector(".maand-2");
+
+const lookup = {
+    4: 30,
+    5: 31,
+};
+
+const focusElements = [];
+
+const monthNames = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+];
+
+let begin = 0;
+let className = 1;
+
+// Tijden
+const today = new Date();
+
+const month = today.getMonth() + 1;
+const hours = today.getHours() + 1;
+
+const time = `${hours}:${today.getMinutes()}`;
+
+let day = today.getDate();
+
+const year = today.getFullYear();
+
+const checkMonth = () => {
+    Object.keys(lookup).forEach((key) => {
+        if (parseInt(key) === month) {
+            maand1.textContent = monthNames[parseInt(key) - 1];
+            for (let i = day; i <= lookup[key]; i++) {
+                fillIn(container, year, month, day);
+                day++;
+            }
+        }
+    });
+
+    day = today.getDate();
+    const diffrent = day - 12;
+
+    if (diffrent > 0) {
+        Object.keys(lookup).forEach((key) => {
+            if (parseInt(key) === month + 1) {
+                day = 1;
+                maand2.textContent = monthNames[parseInt(key) - 1];
+                for (let i = 0; i < diffrent; i++) {
+                    fillIn(container2, year, month + 1, day);
+                    day++;
+                }
+            }
+        });
+    }
+};
+
+window.onload = () => {
+    checkMonth();
+};
+
+const fillIn = (container, year, month, day) => {
+    const node = document.createElement("a");
+    node.setAttribute(
+        "href",
+        `${baseUrl}vertrek=Eindhoven%20Centraal&vertrektype=treinstation&aankomst=Amsterdam%20Centraal&aankomsttype=treinstation&type=vertrek&tijd=${year}-${month}-${day}-T${time}`
+    );
+    node.target = "_blank";
+    node.className = `datum`;
+    node.id = className;
+    node.innerText = day;
+    container.appendChild(node);
+    focusElements.push(`${className}`);
+    className++;
+};
+
+window.addEventListener("keydown", function(event) {
+    const keycode = event.keyCode;
+    const length = focusElements.length;
+
+    if (begin == length) {
+        begin = 0;
+    }
+
+    if (keycode === 74) {
+        document.getElementById(`${focusElements[begin]}`).focus();
+        begin++;
+    }
+
+    if (keycode === 72) {
+        begin = begin - 1;
+        if (begin + 1 === 0 || begin < 0) {
+            begin = length;
+            return;
+        }
+        document.getElementById(`${focusElements[begin]}`).focus();
+    }
+});

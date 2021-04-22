@@ -1,0 +1,104 @@
+@import url("https://fonts.googleapis.com/css2?family=Metal+Mania&display=swap");
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+main {
+    font-family: "Metal Mania", cursive;
+    min-height: 100vh;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.legenda {
+    color: white;
+    font-size: 1.3rem;
+}
+
+.legenda h1 {
+    font-size: 2rem;
+}
+
+.datepicker {
+    flex-direction: column;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+}
+
+.planner-2 .buttons .option {
+    cursor: pointer;
+    display: block;
+    background-repeat: no-repeat;
+    outline: 0;
+    bottom: 10px;
+    padding: 15px 30px;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 1.5rem;
+    overflow: hidden;
+    transition: 0.2s;
+    margin: 3rem auto 1px;
+    color: #000;
+    background-color: white;
+    color: black;
+    border: none;
+    width: 100%;
+    box-shadow: 0 25px 30px -14px rgb(255, 99, 71);
+    border-left: solid 4px rgb(255, 99, 71);
+}
+
+.planner-2 .buttons .option:hover,
+.planner-2 .buttons .option:focus {
+    background: #F63F63;
+    color: white;
+    border-left: solid 3px #f63f63;
+    transition: .3s ease-in-out;
+}
+
+.datum:focus {
+    background: #F63F63;
+    transition: .3s ease-in-out;
+}
+
+.container,
+.container-2 {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+}
+
+.container-2 {
+    margin-top: 2rem;
+}
+
+.datum {
+    width: 100px;
+    height: 100px;
+    border: 1px solid white;
+    padding: 0.4em 0 0 0.4em;
+    text-decoration: none;
+    list-style: none;
+    color: white;
+}
+
+.datum:hover {
+    background: #f63f63;
+}
+
+.maand-1,
+.maand-2 {
+    color: white;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.maand-2 {
+    margin-top: 4rem;
+}
