@@ -48,7 +48,9 @@ main {
     flex-direction: column;
 }
 
-.planner-2 .buttons .option {
+.planner-2 .buttons .keuze-1,
+.planner-2 .buttons .keuze-2,
+.planner-2 .buttons .keuze-3 {
     cursor: pointer;
     display: block;
     background-repeat: no-repeat;
@@ -68,6 +70,10 @@ main {
     width: 100%;
     box-shadow: 0 25px 30px -14px #F63F63;
     border-left: solid 4px rgb(255, 99, 71);
+}
+
+.planner-2 .buttons .keuze-4 {
+    display: none;
 }
 
 .planner-2 .buttons .option:hover,
@@ -116,4 +122,38 @@ main {
 
 .maand-2 {
     margin-top: 4rem;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    color: white;
+    font-family: "Metal Mania", cursive;
+    height: 4rem;
+    width: 99.6%;
+    background-color: transparent;
+    border-left: solid 4px rgb(255, 99, 71);
+    border-right: solid 4px rgb(255, 99, 71);
+    overflow: hidden;
+}
+
+footer h3 {
+    font-size: 2rem;
+    text-align: center;
+}
+
+footer:hover {
+    border-left: solid 4px #f63f63;
+    border-right: solid 4px #f63f63;
+    transition: .3s ease-in-out;
+}
+
+footer:hover h3 {
+    font-size: 3rem;
+}
+
+footer a {
+    text-decoration: none;
+    list-style: none;
+    color: inherit;
 }
