@@ -124,7 +124,6 @@ window.addEventListener("keydown", function(event) {
     }
 
     if (keycode === 72) {
-        console.log(begin, length);
         begin = begin - 1;
         if (begin + 1 === 0 || begin < 0) {
             begin = 19;

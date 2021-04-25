@@ -20,13 +20,22 @@ window.addEventListener("keydown", function(event) {
     const keycode = event.keyCode;
     const length = focusElements.length;
 
-    if (begin === length) {
-        begin = 0;
-    }
-
     if (keycode === 74) {
+        if (begin === length) {
+            begin = 0;
+        }
         document.getElementsByClassName(`${focusElements[begin]}`)[0].focus();
         begin++;
+    }
+
+    if (keycode === 75) {
+        begin = begin - 1;
+
+        if (begin < 0) {
+            begin = 2;
+        }
+
+        document.getElementsByClassName(`${focusElements[begin]}`)[0].focus();
     }
 });
 
