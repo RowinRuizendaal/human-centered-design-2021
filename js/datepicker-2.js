@@ -8,6 +8,7 @@ const maand2 = document.querySelector(".maand-2");
 const lookup = {
     4: 30,
     5: 31,
+    6: 30
 };
 
 const daynames = {
